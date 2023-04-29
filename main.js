@@ -1,4 +1,4 @@
-const btn = document.getElementsByTagName("button")
+const btn = document.querySelector(".button")
 const red = document.getElementById("red")
 const yellow = document.getElementById("yellow")
 const green = document.getElementById("green");
@@ -9,28 +9,34 @@ function trafficLight() {
         red.classList.add("active-red")
         yellow.classList.remove("active-yellow")
         green.classList.remove("active-green")
-    }, 3000)
+    }, 1000)
 
     setTimeout(function() {
         red.classList.remove("active-red")
         yellow.classList.add("active-yellow")
         green.classList.remove("active-green")
-    }, 6000)
+    }, 2000)
 
     setTimeout(function() {
         red.classList.remove("active-red")
         yellow.classList.remove("active-yellow")
         green.classList.add("active-green")
-    }, 9000)
+    }, 3000)
 
 
 }
 
 
 
-var timer = setInterval(function(){trafficLight()}, 10000)
-trafficLight()
 
-btn.addEventListener("click", (e) =>{
-    e.target
-} )
+    btn.addEventListener('click',  () => {
+       
+            var timer = setInterval(function(){trafficLight()}, 4000)
+            trafficLight()
+            btn.classList.add("lightsOn")  
+        
+
+        
+    })
+
+
